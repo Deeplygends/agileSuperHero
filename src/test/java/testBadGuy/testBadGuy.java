@@ -3,13 +3,14 @@ package testBadGuy;
 import model.BadGuy;
 
 import static org.junit.Assert.*;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class testBadGuy {
+
+class testBadGuy {
     private BadGuy badGuy;
 
-    @Before
+    @BeforeEach
     public void setUp()
     {
         badGuy = new BadGuy();

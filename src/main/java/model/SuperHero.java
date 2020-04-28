@@ -1,6 +1,8 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Décrivez votre classe SuperHero ici.
@@ -14,7 +16,7 @@ public class SuperHero
     private String identity = "Spiderman";
     private int strength =  35;
 
-    private Collection<BadGuy> badGuy;
+    private Collection<BadGuy> badGuys;
 
 
     /**
@@ -22,12 +24,16 @@ public class SuperHero
      */
     public SuperHero()
     {
-        // initialisation des variables d'instance
+        badGuys = new ArrayList<BadGuy>();
     }
 
+    /*public void addBadGuy(BadGuy badGuy)
+    {
+        badGuys.add(badGuy);
+    }*/
 
     public void setBadGuy(BadGuy badGuy){
-
+        badGuys.add(badGuy);
     }
 
 
@@ -62,6 +68,6 @@ public class SuperHero
      */
     public boolean fightBadGuy()
     {
-        return true;
+        return badGuys.stream().allMatch(x -> x.getStrength() <= this.strength);
     }
 }

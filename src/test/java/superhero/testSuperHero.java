@@ -13,7 +13,7 @@ import org.junit.After;
 import java.util.logging.Logger;
 
 
-class SuperHeroTest
+class testSuperHero
 {
     private SuperHero superHer1;
     private BadGuy badGuy1;
@@ -55,6 +55,28 @@ class SuperHeroTest
     {
         log.info("Test FightBadGuy");
         assertEquals(true, superHer1.fightBadGuy());
+    }
+    @Test
+    public void testSetIndentity()
+    {
+        superHer1.setIdentity("Moi");
+        assertEquals("Moi", superHer1.getIdentity());
+    }
+    @Test
+    public void testGetIndentity()
+    {
+        assertEquals("Spiderman", superHer1.getIdentity());
+    }
+    @Test
+    public void testGetStrength()
+    {
+        assertEquals(35, superHer1.getStrength());
+    }
+    @Test
+    public void testSetStrength()
+    {
+        superHer1.setStrength(50);
+        assertEquals(50, superHer1.getStrength());
     }
 }
 
