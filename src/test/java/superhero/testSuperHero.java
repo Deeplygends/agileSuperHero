@@ -54,8 +54,9 @@ class testSuperHero
     public void testFightBadGuy()
     {
         log.info("Test FightBadGuy");
-        assertEquals(true, superHer1.fightBadGuy());
+        assertEquals(true, superHer1.fightAllBadGuys());
     }
+
     @Test
     public void testSetIndentity()
     {
