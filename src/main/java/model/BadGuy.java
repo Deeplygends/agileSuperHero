@@ -39,5 +39,6 @@ public class BadGuy
     {
         return this.strength;
     }
+    public void setStrength(int strength) {this.strength = strength;}
 }
 

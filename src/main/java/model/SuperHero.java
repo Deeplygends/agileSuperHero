@@ -61,14 +61,15 @@ public class SuperHero
 
     public void setStrength(int strength)
     {
-        this.strength = strength;
+        if(strength > 250)
+            this.strength = 250;
+        else
+            this.strength = strength;
     }
 
     public int workOut()
     {
-        this.strength += 15;
-        if(this.strength > 250)
-            this.strength = 250;
+        setStrength(this.strength + 15);
         printDetailsHero();
         return this.strength;
     }
@@ -86,6 +87,19 @@ public class SuperHero
     public boolean fightAllBadGuys()
     {
         return badGuys.stream().allMatch(x -> x.getStrength() <= this.strength);
+    }
+
+    public boolean fightBadGuy(BadGuy badguy)
+    {
+        if(badguy.getStrength() < this.strength)
+        {
+            setStrength(strength+badguy.getStrength()/2);
+            badguy.setStrength(badguy.getStrength()/2);
+            return true;
+        }
+        setStrength(this.strength /= 2);
+        badguy.setStrength(badguy.getStrength() + this.strength);
+        return false;
     }
 
     @Override

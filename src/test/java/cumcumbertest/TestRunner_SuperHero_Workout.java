@@ -1,4 +1,4 @@
-package cumcumbertest.us001_superhero_workout;
+package cumcumbertest;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/main/resources/features", glue="")
+@CucumberOptions(features="src/test/resources/features", glue="")
 public class TestRunner_SuperHero_Workout {
 
 }
