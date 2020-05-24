@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="io.cucumber:cucumber-java:5.7.0" type="repository">
+    <properties maven-id="io.cucumber:cucumber-java:5.7.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-java/5.7.0/cucumber-java-5.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-core/5.7.0/cucumber-core-5.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-gherkin/5.7.0/cucumber-gherkin-5.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-gherkin-vintage/5.7.0/cucumber-gherkin-vintage-5.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/tag-expressions/2.0.4/tag-expressions-2.0.4.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-expressions/8.3.1/cucumber-expressions-8.3.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/datatable/3.3.1/datatable-3.3.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-plugin/5.7.0/cucumber-plugin-5.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/docstring/5.7.0/docstring-5.7.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-java/5.7.0/cucumber-java-5.7.0-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-core/5.7.0/cucumber-core-5.7.0-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-gherkin/5.7.0/cucumber-gherkin-5.7.0-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-gherkin-vintage/5.7.0/cucumber-gherkin-vintage-5.7.0-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/tag-expressions/2.0.4/tag-expressions-2.0.4-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-expressions/8.3.1/cucumber-expressions-8.3.1-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/datatable/3.3.1/datatable-3.3.1-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/cucumber-plugin/5.7.0/cucumber-plugin-5.7.0-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/io/cucumber/docstring/5.7.0/docstring-5.7.0-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apiguardian/apiguardian-api/1.1.0/apiguardian-api-1.1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

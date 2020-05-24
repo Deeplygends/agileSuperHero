@@ -21,6 +21,12 @@ public class BadGuy
         nemesis = new SuperHero();
     }
 
+    public BadGuy(int strength)
+    {
+        super();
+        this.strength = strength;
+    }
+
     public void setSuperHero(SuperHero nemesis)
     {
         this.nemesis = nemesis;

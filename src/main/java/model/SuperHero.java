@@ -2,7 +2,6 @@ package model;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -29,12 +28,18 @@ public class SuperHero
         badGuys = new ArrayList<BadGuy>();
     }
 
+    public SuperHero(String identity, int strength)
+    {
+        badGuys = new ArrayList<BadGuy>();
+        this.identity = identity;
+        this.strength = strength;
+    }
     /*public void addBadGuy(BadGuy badGuy)
     {
         badGuys.add(badGuy);
     }*/
 
-    public void setBadGuy(BadGuy badGuy){
+    public void addBadGuy(BadGuy badGuy){
         badGuys.add(badGuy);
     }
 
@@ -59,9 +64,11 @@ public class SuperHero
         this.strength = strength;
     }
 
-    public int workOut(int addStrength)
+    public int workOut()
     {
-        this.strength += addStrength;
+        this.strength += 15;
+        if(this.strength > 250)
+            this.strength = 250;
         printDetailsHero();
         return this.strength;
     }

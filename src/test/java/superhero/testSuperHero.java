@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 class testSuperHero
 {
     private SuperHero superHer1;
+    private SuperHero superHer2;
     private BadGuy badGuy1;
     private static Logger log =java.util.logging.Logger.getLogger("SuperHeroTest");
     /**
@@ -28,8 +29,8 @@ class testSuperHero
     {
         log.info("Before statement");
         superHer1 = new SuperHero();
+        superHer2 = new SuperHero("Spiderman2", 1);
         badGuy1 = new BadGuy();
-        superHer1.setBadGuy(badGuy1);
     }
 
     /**
@@ -42,12 +43,19 @@ class testSuperHero
     {
         //Libérez ici les ressources engagées par setUp()
     }
-
+    @Test
+    public void testEquals()
+    {
+        assertTrue(!superHer1.equals(null));
+        assertEquals(superHer1, superHer1);
+        assertEquals(superHer1, new SuperHero());
+        assertTrue(superHer1.equals(new SuperHero("Spiderman", 35)));
+    }
     @Test
     public void testWorkOut()
     {
         log.info("Test WorkOut Start");
-        assertEquals(50, superHer1.workOut(15));
+        assertEquals(50, superHer1.workOut());
     }
 
     @Test
@@ -78,6 +86,13 @@ class testSuperHero
     {
         superHer1.setStrength(50);
         assertEquals(50, superHer1.getStrength());
+    }
+    @Test
+    public void testAddBadGuy()
+    {
+        BadGuy bg = new BadGuy(100);
+        superHer2.addBadGuy(bg);
+        assertFalse(superHer2.fightAllBadGuys());
     }
 }
 

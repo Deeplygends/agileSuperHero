@@ -29,8 +29,7 @@ class testBadGuy {
         assertEquals(superhero, badGuy.getSuperHero());
     }
     @Test
-    public void testSetSuperHero()
-    {
+    public void testSetSuperHero() {
         badGuy.setSuperHero(superhero);
         assertEquals(superhero, badGuy.getSuperHero());
     }
