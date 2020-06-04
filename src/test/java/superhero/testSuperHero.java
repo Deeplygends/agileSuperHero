@@ -16,8 +16,8 @@ import java.util.logging.Logger;
 class testSuperHero
 {
     private SuperHero superHer1;
-    private SuperHero superHer2;
     private BadGuy badGuy1;
+    private BadGuy badGuy2;
     private static Logger log =java.util.logging.Logger.getLogger("SuperHeroTest");
     /**
      * Met en place les engagements.
@@ -28,9 +28,9 @@ class testSuperHero
     public void setUp() // throws java.lang.Exception
     {
         log.info("Before statement");
-        superHer1 = new SuperHero();
-        superHer2 = new SuperHero("Spiderman2", 1);
+        superHer1 = SuperHero.getInstance();
         badGuy1 = new BadGuy();
+        badGuy2 = new BadGuy(1000);
     }
 
     /**
@@ -48,14 +48,14 @@ class testSuperHero
     {
         assertTrue(!superHer1.equals(null));
         assertEquals(superHer1, superHer1);
-        assertEquals(superHer1, new SuperHero());
-        assertTrue(superHer1.equals(new SuperHero("Spiderman", 35)));
+        assertEquals(superHer1, SuperHero.getInstance());
+        assertTrue(superHer1.getIdentity().equals("Spiderman"));
     }
     @Test
     public void testWorkOut()
     {
         log.info("Test WorkOut Start");
-        assertEquals(50, superHer1.workOut());
+        assertEquals(65, superHer1.workOut());
     }
 
     @Test
@@ -79,7 +79,7 @@ class testSuperHero
     @Test
     public void testGetStrength()
     {
-        assertEquals(35, superHer1.getStrength());
+        assertEquals(50, superHer1.getStrength());
     }
     @Test
     public void testSetStrength()
@@ -91,8 +91,8 @@ class testSuperHero
     public void testAddBadGuy()
     {
         BadGuy bg = new BadGuy(100);
-        superHer2.addBadGuy(bg);
-        assertFalse(superHer2.fightAllBadGuys());
+        superHer1.addBadGuy(bg);
+        assertFalse(superHer1.fightAllBadGuys());
     }
 }
 

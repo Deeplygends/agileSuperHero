@@ -10,12 +10,12 @@ import java.util.logging.Logger;
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class SuperHero
-{
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private String identity = "Spiderman";
-    private int strength =  35;
+public class SuperHero implements IFeroce {
+    private String identity;
+    private int strength;
     private static Logger log = Logger.getLogger("SuperHero");
+
+    private static SuperHero INSTANCE;
 
     private Collection<BadGuy> badGuys;
 
@@ -23,21 +23,20 @@ public class SuperHero
     /**
      * Constructeur d'objets de classe SuperHero
      */
-    public SuperHero()
-    {
-        badGuys = new ArrayList<BadGuy>();
-    }
 
-    public SuperHero(String identity, int strength)
+    private SuperHero(String identity, int strength)
     {
         badGuys = new ArrayList<BadGuy>();
         this.identity = identity;
         this.strength = strength;
     }
-    /*public void addBadGuy(BadGuy badGuy)
-    {
-        badGuys.add(badGuy);
-    }*/
+
+    public static SuperHero getInstance(){
+        if(INSTANCE == null){
+            INSTANCE = new SuperHero("Spiderman", 40);
+        }
+        return INSTANCE; // Lazy Loading
+    }
 
     public void addBadGuy(BadGuy badGuy){
         badGuys.add(badGuy);
@@ -74,7 +73,7 @@ public class SuperHero
         return this.strength;
     }
 
-    private void printDetailsHero()
+    public void printDetailsHero()
     {
         //Print details about the hero after the work out
         log.info("name : "+identity);
@@ -89,6 +88,7 @@ public class SuperHero
         return badGuys.stream().allMatch(x -> x.getStrength() <= this.strength);
     }
 
+    @Override
     public boolean fightBadGuy(BadGuy badguy)
     {
         if(badguy.getStrength() < this.strength)

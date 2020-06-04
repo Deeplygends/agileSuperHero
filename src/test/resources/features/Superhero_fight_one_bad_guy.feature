@@ -9,16 +9,12 @@ Feature: Superhero fight one bad guy
 
     Examples:
       | hero_strength | badguy_strength | hero_newstrength | badguy_newstrength |
-      | 50 | 60 | 25 | 85 |
-      | 250 | 500 | 125 | 625 |
+      | 40 | 260 | 125 | 385 |
+      | 40 | 500 | 62 | 562 |
 
-  Scenario Outline: fight a bad guys and the super hero wins
-    Given a fight between a supehero of strength <hero_strength> and a Bad Guy of strength <badguy_strength>
-    When the super hero wins against the bad guy
-    Then the SuperHero strength grows up to <hero_newstrength>
-    And the bad guy strength decrease to <badguy_newstrength>
+
 
     Examples:
       | hero_strength | badguy_strength | hero_newstrength | badguy_newstrength |
-      | 200 | 50 | 225 | 25 |
-      | 250 | 100 | 250 | 50 |
+      | 40 | 30 | 77 | 15 |
+      | 40 | 20 | 87 | 10 |

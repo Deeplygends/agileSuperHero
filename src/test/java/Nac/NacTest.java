@@ -2,6 +2,7 @@ package Nac;
 
 import static org.junit.Assert.*;
 
+import model.BadGuy;
 import model.Maitre;
 import model.Nac;
 import org.junit.After;
@@ -105,7 +106,19 @@ public class NacTest
         assertEquals("Je m'appelle Hamtaro et je dors 12 heures.", hamtaro.presentation());
     }
 
+    @Test
+    public void fightBadGuyTest(){
+        Nac hamtaro = new Nac("Hamtaro", 12);
+        BadGuy bg = new BadGuy(12);
+        Nac hamtara = new Nac("Hamtara", 0);
 
+        assertTrue(hamtaro.fightBadGuy(bg));
+        assertEquals(hamtaro.getNbrDodo(), 18 );
+        assertEquals(bg.getStrength(),6);
+        assertFalse(hamtara.fightBadGuy(bg));
+        assertEquals(hamtara.getNbrDodo(), 0 );
+        assertEquals(bg.getStrength(),6);
+    }
 
 
 }

@@ -1,6 +1,6 @@
 package model;
 // La classe Nac représente un Nouvel Animal de Compagnie
-public class Nac{
+public class Nac implements IFeroce{
 
     // ****** ATTRIBUTS ****** //
     private String nom;
@@ -75,6 +75,20 @@ public class Nac{
 
     public String presentation(){
         return "Je m'appelle " + this.nom + " et je dors " + this.nbrHeureSommeil + " heures.";
+    }
+
+    @Override
+    public boolean fightBadGuy(BadGuy badguy) {
+        double sommeilTransformeEnForce = (this.nbrHeureSommeil *100) / Math.PI;
+        if(badguy.getStrength() < sommeilTransformeEnForce)
+        {
+            setNbrDodo((int) (this.nbrHeureSommeil + badguy.getStrength()/2));
+            badguy.setStrength(badguy.getStrength()/2);
+            return true;
+        }
+        setNbrDodo(this.nbrHeureSommeil / 2);
+        badguy.setStrength((int) (badguy.getStrength() + this.nbrHeureSommeil * 2));
+        return false;
     }
 }
 

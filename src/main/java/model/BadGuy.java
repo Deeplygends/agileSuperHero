@@ -18,7 +18,7 @@ public class BadGuy
     public BadGuy()
     {
         // initialisation des variables d'instance
-        nemesis = new SuperHero();
+        nemesis = SuperHero.getInstance();
     }
 
     public BadGuy(int strength)

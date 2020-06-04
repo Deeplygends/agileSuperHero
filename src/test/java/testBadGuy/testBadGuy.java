@@ -17,7 +17,7 @@ class testBadGuy {
     {
 
         badGuy = new BadGuy();
-        superhero = new SuperHero();
+        superhero = SuperHero.getInstance();
     }
     @Test
     public void testGetStrength(){

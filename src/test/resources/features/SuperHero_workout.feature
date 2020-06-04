@@ -8,9 +8,7 @@ Feature: SuperHero workout
 
     Examples:
       | hero_strength | hero_strength_workout |
-      | 150 | 165 |
-      | 100 | 115 |
-      | 10 | 25 |
+      | 40 | 55 |
 
   Scenario Outline: Maximum workout
     Given a SuperHero with a strenght of "<strength>"
@@ -19,5 +17,4 @@ Feature: SuperHero workout
 
     Examples:
       | strength | strength_workout |
-      | 250 | 250 |
-      | 240 | 250 |
+      | 40 | 250 |
