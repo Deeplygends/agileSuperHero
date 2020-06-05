@@ -38,6 +38,11 @@ public class SuperHero implements IFeroce {
         return INSTANCE; // Lazy Loading
     }
 
+    public static void resetInstance()
+    {
+        INSTANCE = null;
+    }
+    
     public void addBadGuy(BadGuy badGuy){
         badGuys.add(badGuy);
     }
@@ -66,19 +71,11 @@ public class SuperHero implements IFeroce {
             this.strength = strength;
     }
 
-    public int workOut()
+    public void workOut()
     {
         setStrength(this.strength + 15);
-        printDetailsHero();
-        return this.strength;
     }
 
-    public void printDetailsHero()
-    {
-        //Print details about the hero after the work out
-        log.info("name : "+identity);
-        log.info("force : " + strength);
-    }
     /**
      * The hero fight every bad guy. If he have been defeat one time, the method return false.
      * If he beats all his badGuy
@@ -102,29 +99,8 @@ public class SuperHero implements IFeroce {
         return false;
     }
 
-    @Override
-    public boolean equals(Object o)
-    {
-        /**
-         * si l'objet passé en parametre est null ou n'est pas un objet SuperHero alors ils ne
-         * peuvent pas être égaux
-        **/
-        if(o == null || !(o instanceof SuperHero)) return false;
-        /**
-         * Si la référence (l'adresse mémoire est la même) ils sont forcément égaux
-         */
-        if(o == this) return true;
-        /**
-         * Sinon on transforme o en objet SuperHero et on compare les champs idendity et strength
-         */
-        SuperHero superhero = (SuperHero)o;
-        return superhero.getStrength() == this.strength && superhero.getIdentity() == this.identity;
-    }
 
-    public static void resetInstance()
-    {
-        INSTANCE = null;
-    }
+
 
 
 }

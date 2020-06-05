@@ -62,9 +62,9 @@ class testSuperHero
     public void testWorkOut()
     {
         SuperHero superHer1 = SuperHero.getInstance();
-        var strength = superHer1.getStrength();
         log.info("Test WorkOut Start");
-        assertEquals(strength + 15, superHer1.workOut());
+        superHer1.workOut();
+        assertEquals(55, superHer1.getStrength());
     }
 
     @Test
@@ -100,6 +100,14 @@ class testSuperHero
         SuperHero superHer1 = SuperHero.getInstance();
         superHer1.setStrength(50);
         assertEquals(50, superHer1.getStrength());
+    }
+
+    @Test
+    public void testSetStrengthOverMax()
+    {
+        SuperHero superHer1 = SuperHero.getInstance();
+        superHer1.setStrength(2550);
+        assertEquals(250, superHer1.getStrength());
     }
     @Test
     public void testAddBadGuy()
