@@ -24,16 +24,16 @@ public class SuperHero implements IFeroce {
      * Constructeur d'objets de classe SuperHero
      */
 
-    private SuperHero(String identity, int strength)
+    private SuperHero()
     {
         badGuys = new ArrayList<BadGuy>();
-        this.identity = identity;
-        this.strength = strength;
+        this.identity = "Spiderman";
+        this.strength = 40;
     }
 
     public static SuperHero getInstance(){
         if(INSTANCE == null){
-            INSTANCE = new SuperHero("Spiderman", 40);
+            INSTANCE = new SuperHero();
         }
         return INSTANCE; // Lazy Loading
     }
@@ -119,6 +119,11 @@ public class SuperHero implements IFeroce {
          */
         SuperHero superhero = (SuperHero)o;
         return superhero.getStrength() == this.strength && superhero.getIdentity() == this.identity;
+    }
+
+    public static void resetInstance()
+    {
+        INSTANCE = null;
     }
 
 

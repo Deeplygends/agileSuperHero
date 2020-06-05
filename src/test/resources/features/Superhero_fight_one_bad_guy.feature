@@ -9,12 +9,12 @@ Feature: Superhero fight one bad guy
 
     Examples:
       | badguy_strength | hero_newstrength | badguy_newstrength |
-      | 260 | 125 | 385 |
-      | 500 | 62 | 562 |
+      | 260 | 20 | 280 |
+      | 500 | 20 | 520 |
 
 
 
     Examples:
       |  badguy_strength | hero_newstrength | badguy_newstrength |
-      | 30 | 77 | 15 |
-      | 20 | 87 | 10 |
+      | 30 | 55 | 15 |
+      | 20 | 50 | 10 |

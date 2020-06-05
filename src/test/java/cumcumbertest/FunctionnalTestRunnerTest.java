@@ -88,6 +88,7 @@ public class FunctionnalTestRunnerTest {
 
         @Given("^an instance of a Superhero$")
         public void aSuperheroWithAStrengthOfP1() {
+            SuperHero.resetInstance();
             superHero = SuperHero.getInstance();
             //superHero.printDetailsHero();
         }
@@ -106,6 +107,7 @@ public class FunctionnalTestRunnerTest {
     public static class UserStorySuperHero1B {
         @Given("^a new instance of SuperHero$")
         public void aSuperHeroWithAStrenghtOfP1() {
+            SuperHero.resetInstance();
             superHeroMax = SuperHero.getInstance();
             for(int i = 0; i < 100; i++)
                 superHeroMax.workOut();
@@ -150,6 +152,7 @@ public class FunctionnalTestRunnerTest {
     public static class UserStory2B{
         @Given("^a fight between a superhero and a Bad Guy of strength (\\d+)$")
         public void aFightBetweenASuperheroOfStrengthP1AndABGOfStrengthP2(int p2) {
+            SuperHero.resetInstance();
             superHero = SuperHero.getInstance();
             badguy = new BadGuy(p2);
         }

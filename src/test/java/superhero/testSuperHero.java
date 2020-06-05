@@ -27,6 +27,7 @@ class testSuperHero
     public void setUp() // throws java.lang.Exception
     {
         log.info("Before statement");
+        SuperHero.resetInstance();
         badGuy1 = new BadGuy();
         badGuy2 = new BadGuy(1000);
     }
@@ -46,10 +47,14 @@ class testSuperHero
     {
         SuperHero superHer1 = SuperHero.getInstance();
         SuperHero superHer2 = SuperHero.getInstance();
+
         assertTrue(!superHer1.equals(null));
         assertEquals(superHer1, superHer1);
         assertEquals(superHer1, SuperHero.getInstance());
+
+        //test of the singleton
         assertEquals(superHer1, superHer2);
+
         assertTrue(superHer1.getIdentity().equals("Spiderman"));
 
     }
@@ -87,7 +92,7 @@ class testSuperHero
     public void testGetStrength()
     {
         SuperHero superHer1 = SuperHero.getInstance();
-        assertEquals(50, superHer1.getStrength());
+        assertEquals(40, superHer1.getStrength());
     }
     @Test
     public void testSetStrength()
