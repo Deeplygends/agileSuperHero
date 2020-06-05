@@ -84,15 +84,15 @@ public class FunctionnalTestRunnerTest {
         }
     }
 
-    public static class StepDefinitions {
+    public static class UserStorySuperHero1A {
 
-        @Given("^a Superhero with a strength of \"(.*)\"$")
-        public void aSuperheroWithAStrengthOfP1(String p1) {
+        @Given("^an instance of a Superhero$")
+        public void aSuperheroWithAStrengthOfP1() {
             superHero = SuperHero.getInstance();
             //superHero.printDetailsHero();
         }
 
-        @When("^the SuperHero is working out$")
+        @When("^the SuperHero is working out one time$")
         public void theSuperHeroIsWorkingOut() {
             superHero.workOut();
         }
@@ -102,15 +102,16 @@ public class FunctionnalTestRunnerTest {
             assertEquals(superHero.getStrength(), Integer.parseInt(p1));
         }
 
-
-        @Given("^a SuperHero with a strenght of \"(.*)\"$")
-        public void aSuperHeroWithAStrenghtOfP1(String p1) {
+    }
+    public static class UserStorySuperHero1B {
+        @Given("^a new instance of SuperHero$")
+        public void aSuperHeroWithAStrenghtOfP1() {
             superHeroMax = SuperHero.getInstance();
-            while (superHeroMax.getStrength() < 250)
+            for(int i = 0; i < 100; i++)
                 superHeroMax.workOut();
         }
 
-        @When("^SuperHero works out$")
+        @When("^SuperHero works out 100 times$")
         public void superHeroWorksOut() {
             superHeroMax.workOut();
         }
@@ -119,7 +120,9 @@ public class FunctionnalTestRunnerTest {
         public void theSuperHeroStrengthIsCapToP1(String p1) {
             assertEquals(superHeroMax.getStrength(), Integer.parseInt(p1));
         }
+    }
 
+    public static class UserStory2A{
         @Given("^a fight between a supehero of strength (\\d+) and a BadGuy of strength (\\d+)$")
         public void aFightBetweenASuperheroOfStrengthP1AndABadGuyOfStrengthP2(int p1, int p2) {
             System.out.println(p1);
@@ -142,10 +145,11 @@ public class FunctionnalTestRunnerTest {
         public void theBadGuyStrengthGrowUpToP4(int p4) {
             assertEquals(badguy.getStrength(), p4);
         }
+    }
 
-
-        @Given("^a fight between a supehero of strength (\\d+) and a Bad Guy of strength (\\d+)$")
-        public void aFightBetweenASuperheroOfStrengthP1AndABGOfStrengthP2(int p1, int p2) {
+    public static class UserStory2B{
+        @Given("^a fight between a superhero and a Bad Guy of strength (\\d+)$")
+        public void aFightBetweenASuperheroOfStrengthP1AndABGOfStrengthP2(int p2) {
             superHero = SuperHero.getInstance();
             badguy = new BadGuy(p2);
         }
